@@ -1,0 +1,55 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Script" referent="RBX0">
+		<Properties>
+			<bool name="Archivable">true</bool>
+			<bool name="Disabled">false</bool>
+			<Content name="LinkedSource"><null></null></Content>
+			<string name="Name">ClassicControl</string>
+			<ProtectedString name="Source">-- CLASSIC CONTROL By Sharklebanan
+-- GNU GPL v3 which is basically just do whatever except make it closed source... I do have a closed source version but
+-- if I share it I would give up the security of my server.
+
+-- NEXT MAJOR VERSION TODO LIST
+-- ! = important &amp; = extra feature not required for major and might not make it in ~ = complete
+
+-- !Votekick
+-- !General Administrative Commands
+-- Load text
+-- &amp;Parity with Person299 Admin
+
+-- Major version released after the entirety of this list has been completed
+
+
+-- please change your identification method these old roblox versions are easy to exploit and lack accounts
+-- you could like lock this behind a password or something
+adminlist = {&quot;sharklebanan&quot;};
+-- ditto but slightly more urgent
+banlist = {&quot;testbanuser&quot;};
+
+function CCcommandCheck(message)
+&#9;-- m command
+&#9;if string.sub(string.lower(message), 1, 2) == &quot;;m&quot; then
+&#9;&#9;ccmsg = Instance.new(&quot;Message&quot;, workspace);
+&#9;&#9;ccmsg.Text = string.sub(string.lower(message), 3);
+&#9;&#9;wait(2);
+&#9;&#9;ccmsg:remove();
+&#9;end;
+&#9;-- h command
+&#9;if string.sub(string.lower(message), 1, 2) == &quot;;h&quot; then
+&#9;&#9;cchnt = Instance.new(&quot;Hint&quot;, workspace);
+&#9;&#9;cchnt.Text = string.sub(string.lower(message), 3);
+&#9;&#9;wait(2);
+&#9;&#9;cchnt:remove();
+&#9;end;
+end;
+
+function CCmain(plr)
+&#9;plr.Chatted:connect(CCcommandCheck);
+end;
+
+game.Players.ChildAdded:connect(CCmain);</ProtectedString>
+		</Properties>
+	</Item>
+</roblox>
